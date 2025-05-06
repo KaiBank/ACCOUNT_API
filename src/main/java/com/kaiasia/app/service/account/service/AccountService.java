@@ -96,11 +96,6 @@ public class AccountService {
                 return cachedResponse;
             }
 
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				log.warn("{}", "Thread sleep interrupted at cache service for demo.", e);
-			}
 			log.info("Cache miss for account list: {}", cacheKey);
             // Call T24 API
             T24CustomerAccountResponse t24CustomerAccountResponse = t24UtilClient.getCustomerAccount(location,
